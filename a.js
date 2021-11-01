@@ -1,4 +1,7 @@
 const form=document.querySelector("form");
+const button=document.querySelector(".button");
+const button1=document.querySelector(".button1");
+let info="",info1;
 form.addEventListener("submit",(b)=>{
     b.preventDefault();
     let a= b.target[0].value;
@@ -26,9 +29,11 @@ function out(a) {
         }
     }
     c.unshift("ул Рыбаков, д. 3")
-    document.querySelector(".span").innerHTML=c.join(' - ') + " - ул Рыбаков, д. 3"
-    // d.unshift("#")
+    document.querySelector(".span").innerHTML=c.join(' - ') + " - ул Рыбаков, д. 3";
+    info=c.join(' - ') + " - ул Рыбаков, д. 3";
+ //   navigator.clipboard.writeText("hello").catch(e=>console.log(e))
     document.querySelector(".span1").innerHTML="#" + d.join('; #') + ";"
+    info1="#" + d.join('; #') + ";";
    // document.querySelector(".span2").innerHTML="\"Севастополь, "+c.join('\" , "Севастополь, ') + " \", \"Севастополь, ул Рыбаков, д. 3\"";
     init ("Севастополь, "+c.join(' ,"Севастополь, ') + " ,Севастополь, ул Рыбаков, д. 3\"");
 //init(a)
@@ -41,7 +46,14 @@ function out(a) {
 
 }
 
-
+button.addEventListener("click",()=>{
+    console.log("haloe")
+navigator.clipboard.writeText(info)
+})
+button1.addEventListener("click",()=>{
+    console.log("haloe")
+    navigator.clipboard.writeText(info1)
+})
 
 
 // function getValue (id) {
