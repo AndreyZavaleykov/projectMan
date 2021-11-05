@@ -49,7 +49,6 @@ a#rotator {
     left: 0;
 
 }
-
-button:active + a#rotator{
+button:hover + a#rotator{
     -webkit-animation: move 5s;
     }

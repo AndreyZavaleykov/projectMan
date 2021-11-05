@@ -1,5 +1,5 @@
 function init (a) {
-   let b = a.split(' ,')
+   let b = a.split(' ,');
     for (let i=0;i<=b.length;i++){
         console.log("+")
         if(b[i]===" д. "){
