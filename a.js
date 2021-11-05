@@ -45,6 +45,7 @@ function out(a) {
     // }
 
 }
+//route.properties.get("distance").text
 
 button.addEventListener("click",()=>{
     console.log("haloe")

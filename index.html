@@ -33,24 +33,46 @@
 
     <div class="entry foreground-color">
         <form>
-            <input type="text" name="commands" size="60"/>
+            <input type="text" name="commands" size="60" placeholder="Paste Timeslot Network Response"/>
             <button type="submit">отправить</button>
         </form>
         <hr>
-        <button class="button">Скопировать адреса</button>
-        <span class="span"></span>
+
+        <table  border="2">
+            <tr>
+                <th></th>
+                <th>Адреса заявок</th>
+                <th>Автоматическое копирование</th>
+            </tr>
+            <tr>
+                <td>Адреса заявок</td>
+                <td><span class="span"></span></td>
+                <td><button class="button">Скопировать адреса</button></td>
+            </tr>
+            <tr>
+                <td>Номера заявок</td>
+                <td> <span class="span1"></span> </td>
+                <td><button class="button1">Скопировать номера заявок</button></td>
+            </tr>
+        </table>
         <hr>
-        <button class="button1">Скопировать номера заявок</button>
-        <span class="span1"></span>
-        <hr>
-    </div>
-    <script src="a.js"></script>
+
+<!--        <button class="button">Скопировать адреса</button>-->
+<!--        <span class="span"></span>-->
+<!--        <hr>-->
+<!--        <button class="button1">Скопировать номера заявок</button>-->
+<!--        <span class="span1"></span>-->
+<!--        <hr>-->
+   </div>
+  <script src="a.js"></script>
 </head>
 
 <body>
+<br>
     <div id="map"></div>
     <hr>
     <div id="viewContainer"></div>
+
 </body>
 
 </html>
