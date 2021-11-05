@@ -11,7 +11,7 @@ form.addEventListener("submit",(b)=>{
 function out(a) {
 
    const abc=JSON.parse(a)
- //   console.log(abc)
+    console.log(abc)
     const b = abc[0].timeslots.filter(item=>item.start!=="00:00").map(item => {
         const adress = item.work_data.user_addr.split(', кв')
         return {
@@ -46,3 +46,9 @@ button1.addEventListener("click",()=>{
     navigator.clipboard.writeText(info1)
 })
 
+// document.getElementById('demo').onclick = function changeContent() {
+//
+//     document.getElementById('demo').textContent = "Отправлено";
+//     document.getElementById('demo').style = "Color: red";
+//
+// }
