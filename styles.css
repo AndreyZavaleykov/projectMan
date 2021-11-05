@@ -1,0 +1,32 @@
+.button{
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.button:hover{
+    opacity: 0.9;
+    background: gainsboro;
+}
+.button1{
+    padding: 10px 60px;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.button1:hover{
+    opacity: 0.9;
+    background: gainsboro;
+}
+.btn{
+    /*background: #111;*/
+    /*!*padding: 2px 20px;*!*/
+    border-radius: 10px;
+    /*color: #fff;*/
+    /*border: none;*/
+    /*font-family: inherit;*/
+    cursor:pointer;
+}
+.btn:hover{
+    opacity: 0.9;
+    background: gainsboro;
+    /*outline: dotted red;*/
+}

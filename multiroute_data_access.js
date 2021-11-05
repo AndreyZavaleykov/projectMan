@@ -51,8 +51,8 @@ b
 
     // Создаем карту с добавленной на нее кнопкой.
     var myMap = new ymaps.Map('map', {
-            center: [55.750625, 37.626],
-            zoom: 7,
+            center: [44.5858, 33.4377],
+            zoom: 13,
             controls: [routeTypeSelector]
         }, {
             buttonMaxWidth: 300
