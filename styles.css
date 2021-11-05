@@ -1,3 +1,15 @@
+/*кнопка отправить*/
+.btn{
+    border-radius: 10px;
+    cursor:pointer;
+    animation-play-state: running;
+}
+.btn:hover{
+    opacity: 0.9;
+    background: gainsboro;
+
+}
+/*Кнопка скопировать1*/
 .button{
     padding: 10px 40px;
     border-radius: 10px;
@@ -7,6 +19,7 @@
     opacity: 0.9;
     background: gainsboro;
 }
+/*Кнопка скопировать2*/
 .button1{
     padding: 10px 60px;
     border-radius: 10px;
@@ -16,17 +29,28 @@
     opacity: 0.9;
     background: gainsboro;
 }
-.btn{
-    /*background: #111;*/
-    /*!*padding: 2px 20px;*!*/
-    border-radius: 10px;
-    /*color: #fff;*/
-    /*border: none;*/
-    /*font-family: inherit;*/
-    cursor:pointer;
+
+/*анимация машыны*/
+@-webkit-keyframes move
+{
+    0% {
+        left: 0;
+    }
+    50%{
+        left: 50%;
+    }
+    100% {
+        left: 0;
+    }
 }
-.btn:hover{
-    opacity: 0.9;
-    background: gainsboro;
-    /*outline: dotted red;*/
+a#rotator {
+    position: relative;
+    top: 10px;
+    left: 0;
+
 }
+
+button:active + a#rotator{
+    -webkit-animation: move 5s;
+    transition: background 533333s;
+    }
