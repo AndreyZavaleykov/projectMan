@@ -52,5 +52,4 @@ a#rotator {
 
 button:active + a#rotator{
     -webkit-animation: move 5s;
-    transition: background 533333s;
     }
