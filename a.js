@@ -1,18 +1,28 @@
-const form=document.querySelector("form");
-const button=document.querySelector(".button");
-const button1=document.querySelector(".button1");
-let info="",info1;
-form.addEventListener("submit",(b)=>{
+const form = document.querySelector("form");
+const button = document.querySelector(".button");
+const button1 = document.querySelector(".button1");
+const button2 = document.querySelector(".button2");
+const button3 = document.querySelector(".button3");
+
+let info, info1;
+
+form.addEventListener("submit", (b) => {
     b.preventDefault();
-    let a= b.target[0].value;
+    let a = b.target[0].value;
+    delMap()
+
     out(a);
-  //  console.log(a,Event)
+    // console.log(viewContainer)
+
+    //  console.log(a,Event)
 })
+
+
 function out(a) {
 
-   const abc=JSON.parse(a)
+    const abc = JSON.parse(a)
     console.log(abc)
-    const b = abc[0].timeslots.filter(item=>item.start!=="00:00").map(item => {
+    const b = abc[0].timeslots.filter(item => item.start !== "00:00").map(item => {
         const adress = item.work_data.user_addr.split(', кв')
         return {
             adress: adress[0],
@@ -28,27 +38,57 @@ function out(a) {
             d.splice(i, 1);
         }
     }
+    //оформление ардесов
     c.unshift("ул Рыбаков, д. 3")
-    document.querySelector(".span").innerHTML=c.join(' - ') + " - ул Рыбаков, д. 3";
-    info=c.join(' - ') + " - ул Рыбаков, д. 3";
- //   navigator.clipboard.writeText("hello").catch(e=>console.log(e))
-    document.querySelector(".span1").innerHTML="#" + d.join('; #') + ";"
-    info1="#" + d.join('; #') + ";";
-   // document.querySelector(".span2").innerHTML="\"Севастополь, "+c.join('\" , "Севастополь, ') + " \", \"Севастополь, ул Рыбаков, д. 3\"";
-    init ("Севастополь, "+c.join(' ,"Севастополь, ') + " ,Севастополь, ул Рыбаков, д. 3\"");
+    document.querySelector(".span").innerHTML = c.join(' - ') + " - ул Рыбаков, д. 3";
+    info = c.join(' - ') + " - ул Рыбаков, д. 3";
+
+    //Красивое оформление номеров заявок
+    document.querySelector(".span1").innerHTML = "#" + d.join('; #') + ";"
+    info1 = "#" + d.join('; #') + ";";
+
+    //отправка данных в функцию построения маршрута на карте
+    init("Севастополь, " + c.join(' ,"Севастополь, ') + " ,Севастополь, ул Рыбаков, д. 3\"");
 }
-button.addEventListener("click",()=>{
-    console.log("haloe")
-navigator.clipboard.writeText(info)
+
+//функция удаления карты при перестроении маршрута
+function delMap(){
+    if(info && info1) {
+        //удаляем карту
+        myMap.destroy()
+        //удаляем подпись
+        var node = document.getElementById('viewContainer');
+        while (node.hasChildNodes()) {
+            node.removeChild(node.firstChild);
+        }}
+}
+
+// копируем адресса
+button.addEventListener("click", () => {
+    navigator.clipboard.writeText(info)
 })
-button1.addEventListener("click",()=>{
-    console.log("haloe")
+// копируем номера заявок
+button1.addEventListener("click", () => {
     navigator.clipboard.writeText(info1)
 })
 
-// document.getElementById('demo').onclick = function changeContent() {
-//
-//     document.getElementById('demo').textContent = "Отправлено";
-//     document.getElementById('demo').style = "Color: red";
-//
-// }
+
+button2.addEventListener("click", () => {
+    let g=document.querySelector(".span").innerText;
+    console.log(g)
+    delMap();
+    let b = g.split(' -')
+    init(b.join(' ,"Севастополь, '));
+    info = b;
+
+})
+
+// Копируем километраж
+button3.addEventListener("click", () => {
+    let km=document.querySelector(".km").innerText;
+    let splitkm=km.split("км")
+    let km1=splitkm[0].split("Протяженность маршрута: ")
+    console.log(km1[1])
+    navigator.clipboard.writeText(km1[1])
+
+})

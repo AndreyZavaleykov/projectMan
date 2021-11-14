@@ -65,6 +65,7 @@ ymaps.modules.define('MultiRouteCustomView', [
                 result.push("Всего маршрутов: " + routes.length + ".");
                 for (var i = 0, l = routes.length; i < l; i++) {
                     result.push(this.processRoute(i, routes[i]));
+                    console.log(this.processRoute(i, routes[i]))
                 }
             } else {
                 result.push("Нет маршрутов.");
@@ -105,6 +106,7 @@ ymaps.modules.define('MultiRouteCustomView', [
         createCommonRouteOutput: function (route) {
             return "Протяженность маршрута: " + route.properties.get("distance").text + "<br/>" +
                 "Время в пути: " + route.properties.get("duration").text;
+
         },
 
         // Метод, строящий список текстовых описаний для

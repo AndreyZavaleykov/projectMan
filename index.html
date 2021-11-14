@@ -2,84 +2,101 @@
 <html>
 
 <head>
-    <link rel="short icon" href="images/icon.ico" />
-    <link rel="stylesheet" href="styles.css">
-    <title>Построение путевого листа</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="short icon" href="images/icon.ico"/>
+	<link rel="stylesheet" href="styles.css">
+	<title>Построение путевого листа</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
-    <!--
-        Укажите свой API-ключ. Тестовый ключ НЕ БУДЕТ работать на других сайтах.
-        Получить ключ можно в Кабинете разработчика: https://developer.tech.yandex.ru/keys/
-    -->
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0c7967b5-099e-4826-bb49-2be7d033af95" type="text/javascript"></script>
-    <script src="custom_view.js" type="text/javascript"></script>
-    <script src="multiroute_data_access.js" type="text/javascript"></script>
-    <style>
-        html, body {
-            position: fixed;
-            height: 100%;
-            width: calc(100% - 150px);
-            /*margin: 10px 10px;*/
-        }
+	<script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+	<!--
+			Укажите свой API-ключ. Тестовый ключ НЕ БУДЕТ работать на других сайтах.
+			Получить ключ можно в Кабинете разработчика: https://developer.tech.yandex.ru/keys/
+	-->
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0c7967b5-099e-4826-bb49-2be7d033af95"
+					type="text/javascript"></script>
+	<script src="custom_view.js" type="text/javascript"></script>
+	<script src="multiroute_data_access.js" type="text/javascript"></script>
+	<style>
+      html, body {
+          /*position: fixed;*/
+          height: 100%;
+          width: calc(100% - 150px);
+          /*margin: 10px 10px;*/
+      }
 
-        #map {
-            width: 95%; height: 50%;
-            margin: auto;
-        }
-        #viewContainer {
-            margin: 8px;
-        }
-    </style>
+      #map {
+          width: 95%;
+          height: 50%;
+          margin: auto;
+      }
 
-    <div>
-        <div>
-            <form>
-            <input type="text" name="commands" size="60" placeholder="Paste Timeslot Network Response"/>
-            <button class="btn" type="submit">отправить</button>
-            <a id="rotator"><img src="images/car.png" onclick='this.src="images/invalid.png"' width="90" height="25" /></a>
-
-        </form>
-        </div>
-        <hr>
+      #viewContainer {
+          margin: 8px;
+      }
+	</style>
 
 
-        <table  border="1" >
-            <tr>
-                <th></th>
-                <th>Заявки</th>
-                <th>Автоматическое копирование</th>
-            </tr>
-            <tr>
-                <th align="center" >Адреса заявок</th>
-                <td align="center"><span class="span"></span></td>
-                <td><button class="button">Скопировать адреса</button></td>
-            </tr>
-            <tr>
-                <th align="center" >Номера заявок</th>
-                <td align="center"> <span class="span1"></span> </td>
-                <td><button class="button1">Скопировать <br> номера заявок</button></td>
-            </tr>
-        </table>
-
-
-<!--        <button class="button">Скопировать адреса</button>-->
-<!--        <span class="span"></span>-->
-<!--        <hr>-->
-<!--        <button class="button1">Скопировать номера заявок</button>-->
-<!--        <span class="span1"></span>-->
-<!--        <hr>-->
-   </div>
-  <script src="a.js"></script>
 </head>
 
 <body>
-    <hr>
-    <div id="map"></div>
-    <hr>
-    <div id="viewContainer"></div>
+<div>
+	<div>
+		<form>
+			<input type="text" name="commands" size="60" placeholder="Paste Timeslot Network Response"/>
+			<button class="btn" type="submit">отправить</button>
 
+			<a id="rotator"><img src="images/car.png" onclick='this.src="images/invalid.png"' width="90"
+													 height="25"/></a>
+		</form>
+	</div>
+	<hr>
+
+
+	<table border="1">
+		<tr>
+			<th></th>
+			<th>Заявки</th>
+			<th>Автоматическое копирование</th>
+		</tr>
+		<tr>
+			<th align="center">Адреса заявок</th>
+			<td contentEditable=true id="adress" align="center"><span class="span"></span></td>
+			<td>
+				<button class="button">Скопировать адреса</button>
+				<button class="button2">Сохранить изменения</button>
+<!--				<button id="say">сохранить изменения</button>-->
+			</td>
+		</tr>
+		<tr>
+			<th align="center">Номера заявок</th>
+			<td align="center"><span class="span1"></span></td>
+			<td>
+				<button class="button1">Скопировать <br> номера заявок</button>
+			</td>
+		</tr>
+		<tr>
+			<th align="center">Маршрут</th>
+			<td align="center"><span class="km" id="viewContainer"></span></td>
+			<td>
+				<button class="button3">Скопировать <br> Километры</button>
+			</td>
+		</tr>
+	</table>
+
+
+	<!--        <button class="button">Скопировать адреса</button>-->
+	<!--        <span class="span"></span>-->
+	<!--        <hr>-->
+	<!--        <button class="button1">Скопировать номера заявок</button>-->
+	<!--        <span class="span1"></span>-->
+	<!--        <hr>-->
+</div>
+<!--<input type="button" value="Удалить карту" onclick="">-->
+<hr>
+<div id="map"></div>
+<hr>
+<!--<div id="viewContainer"></div>-->
+<script src="a.js"></script>
 </body>
 
 </html>
-
