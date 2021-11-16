@@ -11,7 +11,7 @@
 
 }
 
-/*Кнопка скопировать1*/
+/*Кнопка скопировать адреса*/
 .button {
     margin-left: 4px;
     height:50px;
@@ -25,7 +25,7 @@
     background: gainsboro;
 }
 
-/*Кнопка скопировать2*/
+/*Кнопка скопировать номера заявок*/
 .button1 {
     margin-left: 4px;
     height:50px;
@@ -39,7 +39,7 @@
     background: gainsboro;
 }
 
-/*Кнопка сохранить изменения2*/
+/*Кнопка сохранить изменения*/
 .button2 {
     height:50px;
     width:100px;
@@ -52,6 +52,8 @@
     opacity: 0.9;
     background: gainsboro;
 }
+
+/*Кнопка скопировать километраж*/
 .button3 {
     margin-left: 4px;
     height:100px;
