@@ -74,10 +74,11 @@ button1.addEventListener("click", () => {
 
 //сохраняем изменения
 button2.addEventListener("click", () => {
+    delMap()
     let g=document.querySelector("#adress").innerText;
     console.log(g)
     delMap();
-    let b = g.split(' -')
+    let b = g.split('-')
     init(b.join(' ,Севастополь, '));
     info = b;
 
