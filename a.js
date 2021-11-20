@@ -40,7 +40,7 @@ function out(a) {
     }
     //оформление ардесов
     c.unshift(office)
-    document.querySelector(".span").innerHTML = c.join(' - ') + " - "+office;
+    document.querySelector("#adress").innerHTML = c.join(' - ') + " - "+office;
     info = c.join(' - ') + " - " + office;
 
     //Красивое оформление номеров заявок
@@ -74,7 +74,7 @@ button1.addEventListener("click", () => {
 
 //сохраняем изменения
 button2.addEventListener("click", () => {
-    let g=document.querySelector(".span").innerText;
+    let g=document.querySelector("#adress").innerText;
     console.log(g)
     delMap();
     let b = g.split(' -')
