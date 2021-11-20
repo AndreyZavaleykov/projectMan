@@ -10,6 +10,16 @@
     background: gainsboro;
 
 }
+.buttonOffice{
+    margin-left: 21%;
+    border-radius: 10px;
+    cursor: pointer;
+    animation-play-state: running;
+}
+.buttonOffice:hover {
+    opacity: 0.9;
+    background: gainsboro;
+}
 
 /*Кнопка скопировать адреса*/
 .button {
@@ -75,7 +85,8 @@
         left: 0;
     }
     50% {
-        left: 50%;
+        left: 21%;
+        /*transform: scale(0.7);*/
     }
     100% {
         left: 0;
@@ -86,7 +97,6 @@ a#rotator {
     position: relative;
     top: 10px;
     left: 0;
-
 }
 
 button:hover + a#rotator {

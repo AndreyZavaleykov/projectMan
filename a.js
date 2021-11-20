@@ -3,8 +3,8 @@ const button = document.querySelector(".button");
 const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 const button3 = document.querySelector(".button3");
-
-let info, info1;
+const buttonOffice = document.querySelector(".buttonOffice");
+let info, info1, office = "ул Рыбаков, д. 3";
 
 form.addEventListener("submit", (b) => {
     b.preventDefault();
@@ -39,16 +39,16 @@ function out(a) {
         }
     }
     //оформление ардесов
-    c.unshift("ул Рыбаков, д. 3")
-    document.querySelector(".span").innerHTML = c.join(' - ') + " - ул Рыбаков, д. 3";
-    info = c.join(' - ') + " - ул Рыбаков, д. 3";
+    c.unshift(office)
+    document.querySelector(".span").innerHTML = c.join(' - ') + " - "+office;
+    info = c.join(' - ') + " - " + office;
 
     //Красивое оформление номеров заявок
     document.querySelector(".span1").innerHTML = "#" + d.join('; #') + ";"
     info1 = "#" + d.join('; #') + ";";
 
     //отправка данных в функцию построения маршрута на карте
-    init("Севастополь, " + c.join(' ,"Севастополь, ') + " ,Севастополь, ул Рыбаков, д. 3\"");
+    init("Севастополь, " + c.join(' ,"Севастополь, ') + " ,Севастополь, \""+office);
 }
 
 //функция удаления карты при перестроении маршрута
@@ -72,13 +72,13 @@ button1.addEventListener("click", () => {
     navigator.clipboard.writeText(info1)
 })
 
-
+//сохраняем изменения
 button2.addEventListener("click", () => {
     let g=document.querySelector(".span").innerText;
     console.log(g)
     delMap();
     let b = g.split(' -')
-    init(b.join(' ,"Севастополь, '));
+    init(b.join(' ,Севастополь, '));
     info = b;
 
 })
@@ -92,3 +92,7 @@ button3.addEventListener("click", () => {
     navigator.clipboard.writeText(km1[1])
 
 })
+buttonOffice.addEventListener("click", () => {
+    office = prompt("Введите ардес офиса, пример: ул Рыбаков, д. 3");
+})
+
