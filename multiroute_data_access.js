@@ -3,7 +3,7 @@ ymaps.ready(init)
 var myMap
 
 function init(a) {
-    console.log(a)
+
     let b = a.split(' ,')
     for (let i = 0; i <= b.length; i++) {
         if (b[i] === ' д. ') {
@@ -12,6 +12,7 @@ function init(a) {
     }
     i=0;
   createMap(b)
+    console.log(b)
 }
 
 function createMap(b) {
