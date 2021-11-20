@@ -18,9 +18,21 @@ form.addEventListener("submit", (b) => {
 })
 
 
-function out(a) {
+// проверка на json
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return true;
+    }
+    return false;
+}
 
-    const abc = JSON.parse(a)
+function out(a) {
+if(IsJsonString(a)) {
+    alert("Введите верное значение")
+}
+    let abc = JSON.parse(a)
     console.log(abc)
     const b = abc[0].timeslots.filter(item => item.start !== "00:00").map(item => {
         const adress = item.work_data.user_addr.split(', кв')
