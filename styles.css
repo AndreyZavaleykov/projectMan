@@ -1,3 +1,6 @@
+.inputText{
+    width: 40%;
+}
 /*кнопка отправить*/
 .btn {
     border-radius: 10px;
@@ -10,8 +13,9 @@
     background: gainsboro;
 
 }
+/*Кнопка адрес офиса*/
 .buttonOffice{
-    margin-left: 21%;
+    float: right;
     border-radius: 10px;
     cursor: pointer;
     animation-play-state: running;
@@ -85,7 +89,7 @@
         left: 0;
     }
     50% {
-        left: 21%;
+        left: 36%;
         /*transform: scale(0.7);*/
     }
     100% {
@@ -101,4 +105,35 @@ a#rotator {
 
 button:hover + a#rotator {
     -webkit-animation: move 5s;
+}
+@media screen and (max-width : 1340px) {
+    .buttonOffice{
+        margin-right: 5%;}
+
+}
+@media screen and (max-width : 800px) {
+    .vulc__nav {
+        font-size:0.5em;
+}
+    .inputText{
+        width: 53%;
+    }
+    a#rotator{
+        display: none;
+    }
+}
+@media screen and (max-width : 550px) {
+    .vulc__nav {
+        font-size:0.5em;
+    }
+    .inputText{
+        width: 100%;
+    }
+    img{
+        display: none;
+    }
+    .buttonOffice{
+        float: left;
+        margin-right: 0;
+    }
 }

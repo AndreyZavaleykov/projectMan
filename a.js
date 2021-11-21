@@ -4,7 +4,7 @@ const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 let button3 = document.querySelector(".button3");
 const buttonOffice = document.querySelector(".buttonOffice");
-let info, info1, office = "ул Рыбаков, д. 3";
+let info=0, info1=0, office = "ул Рыбаков, д. 3";
 
 // копируем адресса
 button.addEventListener("click", () => {
@@ -17,13 +17,14 @@ button1.addEventListener("click", () => {
 
 //сохраняем изменения
 button2.addEventListener("click", () => {
-    delMap()
+    delMap();
     let g=document.querySelector("#adress").innerText;
     console.log(g)
     let b = g.split('-')
     init(b.join(' ,Севастополь, '));
     info = b;
     button3.removeAttribute('disabled');
+    button.removeAttribute('disabled');
 })
 
 // Копируем километраж
@@ -43,9 +44,9 @@ buttonOffice.addEventListener("click", () => {
 
 //Кнопка Отправить
 form.addEventListener("submit", (b) => {
+    delMap();
     b.preventDefault();
     let a = b.target[0].value;
-    delMap()
     out(a);
     button.removeAttribute('disabled');
     button1.removeAttribute('disabled');
@@ -108,13 +109,17 @@ if(IsJsonString(a)) {
 
 //функция удаления карты при перестроении маршрута
 function delMap(){
-    if(info && info1) {
+    console.log(info1);
+    console.log(info1);
+     if(info) {
+         console.log("map Delay");
         //удаляем карту
         myMap.destroy()
         //удаляем подпись
         var node = document.getElementById('viewContainer');
         while (node.hasChildNodes()) {
             node.removeChild(node.firstChild);
-        }}
+        }
+}
 }
 

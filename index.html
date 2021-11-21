@@ -20,7 +20,7 @@
       html, body {
           /*position: fixed;*/
           height: 100%;
-          width: calc(100% - 150px);
+          /*width: calc(100% - 150px);*/
           /*margin: 10px 10px;*/
       }
 
@@ -42,12 +42,11 @@
 <div>
 	<div>
 		<form>
-			<input onClick="this.select();" type="text" name="commands" size="60" placeholder="Paste Timeslot Network Response"/>
+			<input class=inputText onClick="this.select();" type="text" name="commands" placeholder="Paste Timeslot Network Response"/>
 			<button class="btn" type="submit">Отправить</button>
 
-			<a id="rotator"><img src="images/car.png" onclick='this.src="images/invalid.png"' width="90"
-													 /></a>
-			<button disabled class="buttonOffice"><img src="images/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
+			<a id="rotator"><img class="car" src="images/car.png" onclick='this.src="images/invalid.png"' width="90"/></a>
+			<button  disabled class="buttonOffice"><img src="images/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
 		</form>
 	</div>
 	<hr>
@@ -78,7 +77,7 @@
 			<th align="center">Маршрут</th>
 			<td align="center"><span class="km" id="viewContainer"></span></td>
 			<td>
-				<button disabled class="button3">Скопировать <br> Километры</button>
+				<button disabled class="button3">Скопировать <br> километры</button>
 			</td>
 		</tr>
 	</table>
