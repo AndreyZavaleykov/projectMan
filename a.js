@@ -2,7 +2,7 @@ const form = document.querySelector("form");
 const button = document.querySelector(".button");
 const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
-const button3 = document.querySelector(".button3");
+let button3 = document.querySelector(".button3");
 const buttonOffice = document.querySelector(".buttonOffice");
 let info, info1, office = "ул Рыбаков, д. 3";
 
@@ -20,11 +20,10 @@ button2.addEventListener("click", () => {
     delMap()
     let g=document.querySelector("#adress").innerText;
     console.log(g)
-    delMap();
     let b = g.split('-')
     init(b.join(' ,Севастополь, '));
     info = b;
-
+    button3.removeAttribute('disabled');
 })
 
 // Копируем километраж
@@ -39,7 +38,7 @@ button3.addEventListener("click", () => {
 
 //Кнопка изменить офис
 buttonOffice.addEventListener("click", () => {
-    office = prompt("Введите ардес офиса, пример: ул Рыбаков, д. 3");
+    office = prompt("Адрес офиса", "ул Рыбаков, д. 3");
 })
 
 //Кнопка Отправить
@@ -48,6 +47,12 @@ form.addEventListener("submit", (b) => {
     let a = b.target[0].value;
     delMap()
     out(a);
+    button.removeAttribute('disabled');
+    button1.removeAttribute('disabled');
+    button3.removeAttribute('disabled');
+    buttonOffice.removeAttribute('disabled');
+
+
 })
 
 
