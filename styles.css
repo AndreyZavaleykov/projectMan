@@ -15,6 +15,7 @@
 }
 /*Кнопка адрес офиса*/
 .buttonOffice{
+    margin-top: 5px;
     float: right;
     border-radius: 10px;
     cursor: pointer;
