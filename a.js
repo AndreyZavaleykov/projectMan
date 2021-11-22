@@ -45,6 +45,7 @@ buttonOffice.addEventListener("click", () => {
 //Кнопка Отправить
 form.addEventListener("submit", (b) => {
     delMap();
+    notSelect();
     b.preventDefault();
     let a = b.target[0].value;
     out(a);
@@ -121,5 +122,12 @@ function delMap(){
             node.removeChild(node.firstChild);
         }
 }
+}
+//отмена авто выделения ардесов
+function notSelect() {
+    const className = "select";
+    const els = document.getElementsByClassName(className);
+    while (els.length > 0) els[0].classList.remove(className);
+    console.log("jnvtytyj dsltktybt")
 }
 
