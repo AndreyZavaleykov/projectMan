@@ -19,7 +19,6 @@ button1.addEventListener("click", () => {
 button2.addEventListener("click", () => {
     delMap();
     let g=document.querySelector("#adress").innerText;
-    console.log(g)
     let b = g.split('-')
     init(b.join(' ,Севастополь, '));
     info = b;
@@ -32,7 +31,6 @@ button3.addEventListener("click", () => {
     let km=document.querySelector(".km").innerText;
     let splitkm=km.split("км")
     let km1=splitkm[0].split("Протяженность маршрута: ")
-    console.log(km1[1])
     navigator.clipboard.writeText(km1[1])
 
 })
@@ -53,8 +51,6 @@ form.addEventListener("submit", (b) => {
     button1.removeAttribute('disabled');
     button3.removeAttribute('disabled');
     buttonOffice.removeAttribute('disabled');
-
-
 })
 
 
@@ -110,10 +106,7 @@ if(IsJsonString(a)) {
 
 //функция удаления карты при перестроении маршрута
 function delMap(){
-    console.log(info1);
-    console.log(info1);
      if(info) {
-         console.log("map Delay");
         //удаляем карту
         myMap.destroy()
         //удаляем подпись
@@ -123,11 +116,42 @@ function delMap(){
         }
 }
 }
+
+
+
 //отмена авто выделения ардесов
 function notSelect() {
-    const className = "select";
+    const className = "#content";
     const els = document.getElementsByClassName(className);
     while (els.length > 0) els[0].classList.remove(className);
-    console.log("jnvtytyj dsltktybt")
 }
 
+//авто выделения ардесов
+function selectText(elementId) {
+
+    var doc = document,
+        text = doc.getElementById(elementId), range, selection;
+
+    if(doc.body.createTextRange) {
+
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+
+    } else if(window.getSelection) {
+
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+    }
+
+}
+
+$("#content").click(function() {
+
+    selectText(this.id);
+
+});

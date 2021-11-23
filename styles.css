@@ -139,6 +139,3 @@ button:hover + a#rotator {
         margin-top: 0;
     }
 }
-.select{
-    user-select: all;
-}
