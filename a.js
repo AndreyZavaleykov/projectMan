@@ -19,9 +19,11 @@ button1.addEventListener("click", () => {
 button2.addEventListener("click", () => {
     delMap();
     let g=document.querySelector("#adress").innerText;
+    info = g;
+    console.log(g)
     let b = g.split('-')
     init(b.join(' ,Севастополь, '));
-    info = b;
+
     button3.removeAttribute('disabled');
     button.removeAttribute('disabled');
 })
@@ -117,8 +119,6 @@ function delMap(){
 }
 }
 
-
-
 //отмена авто выделения ардесов
 function notSelect() {
     const className = "#content";
@@ -126,7 +126,7 @@ function notSelect() {
     while (els.length > 0) els[0].classList.remove(className);
 }
 
-//авто выделения ардесов
+// авто выделения ардесов
 function selectText(elementId) {
 
     var doc = document,
