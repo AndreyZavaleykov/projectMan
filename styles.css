@@ -1,3 +1,6 @@
+.body{
+    background-color: #fbfbfb;
+}
 .inputText{
     width: 40%;
 }
@@ -56,6 +59,7 @@
 
 /*Кнопка сохранить изменения*/
 .button2 {
+    margin-left: 4px;
     height:50px;
     width:100px;
     /*padding: 10px 60px;*/
@@ -125,3 +129,52 @@
         margin-top: 0;
     }
 }
+
+
+table {
+    border-spacing: 0;
+    empty-cells: hide;
+    width: 100%;
+}
+td {
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom: 1px solid #F4EEE8;
+    transition: all 0.5s linear;
+}
+td:first-child {
+    text-align: left;
+    color: #3D3511;
+    font-weight: bold;
+}
+th {
+    padding: 10px 20px;
+    color: #3D3511;
+    border-bottom: 1px solid #F4EEE8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+td:nth-child(even) {
+    width: 80%;
+    background: #1ab394;
+}
+td:nth-child(odd) {
+    background: #a7b1c2;
+}
+th:nth-child(even)  {
+    background: #1ab394;
+}
+th:nth-child(odd)  {
+    background: #a7b1c2;
+}
+.round-top {
+    border-top-left-radius: 5px;
+}
+.round-bottom {
+    border-bottom-left-radius: 5px;
+}
+tr:hover td{
+    background: #1c84c6;
+    font-weight: bold;
+}
+
