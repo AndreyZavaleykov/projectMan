@@ -156,19 +156,27 @@ $("#content").click(function() {
 
 });
 
+//Анимация машинки
 function goCar() {
-    console.log(1212)
     let start = Date.now();
-
     let timer = setInterval(function() {
         let timePassed = Date.now() - start;
-
-        car.style.left = timePassed / 55 + '%';
-
-        if (timePassed > 2000) {
-            clearInterval(timer);
-            car.style.left =0;
+        let right=0;
+        switch (true) {
+            case (timePassed < 2000):
+                car.style.left = timePassed / 55 + '%';
+                right = timePassed / 55;
+                break;
+            case (timePassed>2000):
+                car2.style.transform = "scale(-1, 1)";
+            case (2000<timePassed<4000):
+                car.style.left =73+ right - (timePassed/ 55 - right) + '%';
+                break;
         }
-
+        if (4000 < timePassed ){
+            car2.style.transform = "scale(1, 1)";
+            car.style.left = 0;
+            clearInterval(timer);
+        }
     }, 20);
 }

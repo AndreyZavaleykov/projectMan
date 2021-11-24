@@ -82,12 +82,16 @@
     opacity: 0.9;
     background: gainsboro;
 }
+#car2{
+    transform: scale(1, 1);
+}
 #car {
     position: relative;
     top: 10px;
     left: 0;
     margin-left: 0;
     cursor: pointer;
+
 }
 @media screen and (max-width : 1340px) {
 }
