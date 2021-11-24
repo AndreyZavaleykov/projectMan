@@ -23,7 +23,7 @@ button2.addEventListener("click", () => {
     console.log(g)
     let b = g.split('-')
     init(b.join(' ,Севастополь, '));
-
+    goCar();
     button3.removeAttribute('disabled');
     button.removeAttribute('disabled');
 })
@@ -49,6 +49,7 @@ form.addEventListener("submit", (b) => {
     b.preventDefault();
     let a = b.target[0].value;
     out(a);
+    goCar();
     button.removeAttribute('disabled');
     button1.removeAttribute('disabled');
     button3.removeAttribute('disabled');
@@ -126,7 +127,7 @@ function notSelect() {
     while (els.length > 0) els[0].classList.remove(className);
 }
 
-// авто выделения ардесов
+// авто всыделения ардеов
 function selectText(elementId) {
 
     var doc = document,
@@ -149,9 +150,25 @@ function selectText(elementId) {
     }
 
 }
-
 $("#content").click(function() {
 
     selectText(this.id);
 
 });
+
+function goCar() {
+    console.log(1212)
+    let start = Date.now();
+
+    let timer = setInterval(function() {
+        let timePassed = Date.now() - start;
+
+        car.style.left = timePassed / 55 + '%';
+
+        if (timePassed > 2000) {
+            clearInterval(timer);
+            car.style.left =0;
+        }
+
+    }, 20);
+}
