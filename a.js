@@ -4,7 +4,7 @@ const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 let button3 = document.querySelector(".button3");
 const buttonOffice = document.querySelector(".buttonOffice");
-let info=0, info1=0, office = "ул Рыбаков, д. 3";
+let info=0, info1=0, office = "ул Рыбаков, д. 3/1";
 
 // копируем адресса
 button.addEventListener("click", () => {
@@ -39,8 +39,7 @@ button3.addEventListener("click", () => {
 
 //Кнопка изменить офис
 buttonOffice.addEventListener("click", () => {
-    office = prompt("Адрес офиса", "ул Рыбаков, д. 3");
-})
+    office =  prompt("Адрес офиса", office); })
 
 //Кнопка Отправить
 form.addEventListener("submit", (b) => {
@@ -167,9 +166,8 @@ function goCar() {
                 car.style.left = timePassed / 55 + '%';
                 right = timePassed / 55;
                 break;
-            case (timePassed>2000):
+            case (2000<timePassed <2500 ):
                 car2.style.transform = "scale(-1, 1)";
-            case (2000<timePassed<4000):
                 car.style.left =73+ right - (timePassed/ 55 - right) + '%';
                 break;
         }
@@ -178,5 +176,5 @@ function goCar() {
             car.style.left = 0;
             clearInterval(timer);
         }
-    }, 20);
+    }, 5);
 }
