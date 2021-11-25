@@ -3,7 +3,7 @@
 }
 .btn:hover {
     opacity: 0.9;
-    background: gainsboro;
+    background: #1F75FE;
 
 }
 /*Кнопка адрес офиса*/
@@ -19,7 +19,7 @@
 }
 .buttonOffice:hover {
     opacity: 0.9;
-    background: gainsboro;
+    background: #1F75FE;
 }
 
 /*Кнопка скопировать адреса*/
@@ -35,7 +35,7 @@
 
 .button:hover {
     opacity: 0.9;
-    background: gainsboro;
+    background: #1F75FE;
 }
 
 /*Кнопка скопировать номера заявок*/
@@ -51,7 +51,7 @@
 
 .button1:hover {
     opacity: 0.9;
-    background: gainsboro;
+    background: #1F75FE;
 }
 
 /*Кнопка сохранить изменения*/
@@ -68,7 +68,7 @@
 
 .button2:hover {
     opacity: 0.9;
-    background: gainsboro;
+    background: #1F75FE;
 }
 
 /*Кнопка скопировать километраж*/
@@ -85,7 +85,7 @@
 
 .button3:hover {
     opacity: 0.9;
-    background: gainsboro;
+    background: #1F75FE;
 }
 #car2{
     transform: scale(1, 1);
