@@ -24,7 +24,7 @@ button2.addEventListener("click", () => {
     console.log(g)
     let b = g.split('-')
     init(b.join(' ,Севастополь, '));
-    goCar();
+   setTimeout( () => {goCar();}, 1600);
     button3.removeAttribute('disabled');
     button3.style.cssText="color: #4B0082; background: #FFC618;";
     button.removeAttribute('disabled');
@@ -51,7 +51,6 @@ form.addEventListener("submit", (b) => {
     b.preventDefault();
     let a = b.target[0].value;
     out(a);
-    goCar();
     button.removeAttribute('disabled');
     button.style.cssText="color: #4B0082; background: #FFC618;";
     button1.removeAttribute('disabled');
@@ -107,12 +106,15 @@ if(IsJsonString(a)) {
     //Красивое оформление номеров заявок
     // document.querySelector(".span1").innerHTML = "#" + d.join('; #') + ";"
     info1 = "#" + d.join('; #') + ";";
-    //запуск печатной машинки
-    textPrint(info1);
-    go();
 
     //отправка данных в функцию построения маршрута на карте
     init("Севастополь, " + c.join(' , Севастополь, ') + " , Севастополь, "+office);
+
+    //запуск печатной машинки
+    setTimeout(() => {
+    textPrint(info1);
+    go();
+    goCar();},1600);
 }
 
 //функция удаления карты при перестроении маршрута
