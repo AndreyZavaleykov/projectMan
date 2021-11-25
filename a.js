@@ -5,6 +5,7 @@ const button2 = document.querySelector(".button2");
 let button3 = document.querySelector(".button3");
 const buttonOffice = document.querySelector(".buttonOffice");
 let info=0, info1=0, office = "ул Рыбаков, д. 3/1";
+let text;
 
 // копируем адресса
 button.addEventListener("click", () => {
@@ -104,10 +105,12 @@ if(IsJsonString(a)) {
     document.querySelector("#adress").innerHTML = c.join(' - ') + " - "+office;
     info = c.join(' - ') + " - " + office;
 
-    //Красивое оформление номеров заявок
-    document.querySelector(".span1").innerHTML = "#" + d.join('; #') + ";"
-    info1 = "#" + d.join('; #') + ";";
 
+    //Красивое оформление номеров заявок
+    // document.querySelector(".span1").innerHTML = "#" + d.join('; #') + ";"
+    info1 = "#" + d.join('; #') + ";";
+    textPrint(info1);
+    go();
     //отправка данных в функцию построения маршрута на карте
     init("Севастополь, " + c.join(' , Севастополь, ') + " , Севастополь, "+office);
 }
