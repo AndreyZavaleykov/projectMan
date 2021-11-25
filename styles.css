@@ -8,6 +8,7 @@
 }
 /*Кнопка адрес офиса*/
 .buttonOffice{
+    color: #4B0082;
     border: 1px solid #8B00FF;
     background: #FFC618;
     margin-top: 5px;
@@ -24,6 +25,7 @@
 
 /*Кнопка скопировать адреса*/
 .button {
+    color: #4B0082;
     border: 1px solid #FFC618;
     background: #FFC618;
     margin-left: 4px;
@@ -40,6 +42,7 @@
 
 /*Кнопка скопировать номера заявок*/
 .button1 {
+    color: #4B0082;
     border: 1px solid #FFC618;
     background: #FFC618;
     margin-left: 4px;
@@ -56,6 +59,7 @@
 
 /*Кнопка сохранить изменения*/
 .button2 {
+    color: #4B0082;
     border: 1px solid #FFC618;
     background: #FFC618;
     margin-left: 4px;
@@ -73,6 +77,7 @@
 
 /*Кнопка скопировать километраж*/
 .button3 {
+    color: #4B0082;
     border: 1px solid #FFC618;
     background: #FFC618;
     margin-left: 4px;
@@ -137,19 +142,19 @@ table {
     width: 100%;
 }
 td {
+    color: #4B0082;
     padding: 10px 20px;
     text-align: center;
     border-bottom: 1px solid #F4EEE8;
     transition: all 0.5s linear;
 }
-td:first-child {
-    text-align: left;
-    color: #000000;
-    font-weight: bold;
-}
+/*td:first-child {*/
+/*    text-align: left;*/
+/*    color: #fff;*/
+/*}*/
 th {
     padding: 8px 15px;
-    color: #000000;
+    color: #fff;
     border: 1px solid #fff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -159,7 +164,7 @@ th {
 td:nth-child(even) {
     width: 80%;
     background: #fff;
-    border: 1px solid #000000;
+    border: 1px solid #4B0082;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -170,7 +175,8 @@ td:nth-child(odd) {
 }
 th:nth-child(even)  {
     background: #fff;
-    border: 1px solid #000;
+    color: #4B0082;
+    border: 1px solid #4B0082;
 }
 th:nth-child(odd)  {
     background: #8B00FF;
@@ -183,7 +189,6 @@ th:nth-child(odd)  {
 }
 td:hover{
     background: #DCDCDC;
-    font-weight: bold;
 }
 
 body{
@@ -196,6 +201,7 @@ body{
     display: flex;
 }
 .inputText {
+    color: #4B0082;
     left: 20%;
     width: 27%;
     border: 3px solid #FFC618;
@@ -211,7 +217,7 @@ body{
     border: 1px solid #FFC618;
     background: #FFC618;
     text-align: center;
-    color: #022027;
+    color: #4B0082;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
