@@ -160,7 +160,7 @@ th {
     border-bottom-right-radius: 10px;
 }
 td:nth-child(even) {
-    width: 80%;
+    width: 70%;
     background: #fff;
     border: 1px solid #4B0082;
     border-top-left-radius: 10px;
