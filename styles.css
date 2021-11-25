@@ -148,9 +148,9 @@ td:first-child {
     font-weight: bold;
 }
 th {
-    padding: 10px 20px;
+    padding: 8px 15px;
     color: #000000;
-    border-bottom: 1px solid #8B00FF;
+    border: 1px solid #fff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -159,7 +159,7 @@ th {
 td:nth-child(even) {
     width: 80%;
     background: #fff;
-    border: 2px solid #8B00FF;
+    border: 1px solid #000000;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -170,7 +170,7 @@ td:nth-child(odd) {
 }
 th:nth-child(even)  {
     background: #fff;
-    border: 2px solid #8B00FF;
+    border: 1px solid #000;
 }
 th:nth-child(odd)  {
     background: #8B00FF;
