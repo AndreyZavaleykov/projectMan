@@ -184,7 +184,3 @@ function goCar() {
         }
     }, 5);
 }
-
-$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
-    console.log(data.ip);
-});
