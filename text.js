@@ -5,8 +5,8 @@
     var size = 16;
     var txtcol = "#4B0082";
     var lastcol = "#FFC618";
-    var pause = 20000;
-    var speed = 50;
+    var pause = 1500;
+    var speed = 30;
     var i = i_str = 0;
     var msg = msgpre = msgafter = "";
 
@@ -38,6 +38,7 @@
     function changemess() {
     i++;
     i_str = 0;
-    if (i>mess.length-1) i = 0;
+    if (i>mess.length-1) {i = 0;
+        return;}
     go();
 }

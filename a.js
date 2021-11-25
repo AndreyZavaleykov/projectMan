@@ -81,7 +81,6 @@ if(IsJsonString(a)) {
     alert("Введено неверное значение")
 }
 
-
     let abc = JSON.parse(a)
     console.log(abc)
     const b = abc[0].timeslots.filter(item => item.start !== "00:00").map(item => {
@@ -105,12 +104,13 @@ if(IsJsonString(a)) {
     document.querySelector("#adress").innerHTML = c.join(' - ') + " - "+office;
     info = c.join(' - ') + " - " + office;
 
-
     //Красивое оформление номеров заявок
     // document.querySelector(".span1").innerHTML = "#" + d.join('; #') + ";"
     info1 = "#" + d.join('; #') + ";";
+    //запуск печатной машинки
     textPrint(info1);
     go();
+
     //отправка данных в функцию построения маршрута на карте
     init("Севастополь, " + c.join(' , Севастополь, ') + " , Севастополь, "+office);
 }
