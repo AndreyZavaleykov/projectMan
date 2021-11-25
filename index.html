@@ -38,17 +38,15 @@
 <body class="body">
 <div>
 	<div>
-		<form>
+		<form class="search">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<input class=inputText onClick="this.select();" type="text" name="commands" placeholder="Paste Timeslot Network Response"/>
 			<button class="btn" type="submit">Отправить</button>
-
 			<a id="car" ><img id="car2" src="images/car.png" onclick='this.src="images/invalid.png"' width="90"/></a>
 			<button  disabled class="buttonOffice"><img src="images/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
 		</form>
 	</div>
 	<hr>
-
-
 	<table>
 		<tr>
 			<th></th>
@@ -78,7 +76,6 @@
 			</th>
 		</tr>
 	</table>
-
 </div>
 <hr>
 <div id="map"></div>
