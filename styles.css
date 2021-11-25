@@ -16,7 +16,7 @@
     cursor: pointer;
     animation-play-state: running;
 }
-.buttonOffice:hover {
+.buttonOffice:hover:not([disabled])  {
     opacity: 0.9;
     background: #B8860B;
 }
@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-.button:hover {
+.button:hover:not([disabled]) {
     opacity: 0.9;
     background: #B8860B;
 }
@@ -50,7 +50,7 @@
     cursor: pointer;
 }
 
-.button1:hover {
+.button1:hover:not([disabled]) {
     opacity: 0.9;
     background: #B8860B;
 }
@@ -86,7 +86,7 @@
     cursor: pointer;
 }
 
-.button3:hover {
+.button3:hover:not([disabled])  {
     opacity: 0.9;
     background: #B8860B;
 }
