@@ -25,7 +25,9 @@ button2.addEventListener("click", () => {
     init(b.join(' ,Севастополь, '));
     goCar();
     button3.removeAttribute('disabled');
+    button3.style.cssText="color: #4B0082; background: #FFC618;";
     button.removeAttribute('disabled');
+    button.style.cssText="color: #4B0082; background: #FFC618;";
 })
 
 // Копируем километраж
@@ -50,9 +52,13 @@ form.addEventListener("submit", (b) => {
     out(a);
     goCar();
     button.removeAttribute('disabled');
+    button.style.cssText="color: #4B0082; background: #FFC618;";
     button1.removeAttribute('disabled');
+    button1.style.cssText="color: #4B0082; background: #FFC618;";
     button3.removeAttribute('disabled');
+    button3.style.cssText="color: #4B0082; background: #FFC618;";
     buttonOffice.removeAttribute('disabled');
+    buttonOffice.style.cssText="color: #4B0082; background: #FFC618;";
 })
 
 
