@@ -23,6 +23,7 @@
 
 /*Кнопка скопировать адреса*/
 .button {
+    color: #fff;
     background: #8B00FF;
     border: 1px solid #FFC618;
     margin-left: 4px;
@@ -39,6 +40,7 @@
 
 /*Кнопка скопировать номера заявок*/
 .button1 {
+    color: #fff;
     background: #8B00FF;
     border: 1px solid #FFC618;
     margin-left: 4px;
@@ -73,6 +75,7 @@
 
 /*Кнопка скопировать километраж*/
 .button3 {
+    color: #fff;
     background: #8B00FF;
     border: 1px solid #FFC618;
     margin-left: 4px;
