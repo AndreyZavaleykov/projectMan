@@ -82,7 +82,7 @@ if(IsJsonString(a)) {
 
     let abc = JSON.parse(a)
     console.log(abc)
-    const b = abc[0].timeslots.filter(item => item.start !== "00:00").map(item => {
+    const b = abc[0].timeslots.filter(item => item.start !== "00:00").filter(item => item.start !== "21:00").map(item => {
         const adress = item.work_data.user_addr.split(', кв')
         return {
             adress: adress[0],
