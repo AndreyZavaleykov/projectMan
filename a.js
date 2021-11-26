@@ -3,6 +3,7 @@ const button = document.querySelector(".button");
 const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 let button3 = document.querySelector(".button3");
+let adress = document.getElementById("adress");
 const buttonOffice = document.querySelector(".buttonOffice");
 let info=0, info1=0, office = "ул Рыбаков, д. 3/1";
 let text;
@@ -47,7 +48,6 @@ buttonOffice.addEventListener("click", () => {
 //Кнопка Отправить
 form.addEventListener("submit", (b) => {
     delMap();
-    notSelect();
     b.preventDefault();
     let a = b.target[0].value;
     out(a);
@@ -59,6 +59,7 @@ form.addEventListener("submit", (b) => {
     button3.style.cssText="color: #4B0082; background: #FFC618;";
     buttonOffice.removeAttribute('disabled');
     buttonOffice.style.cssText="color: #4B0082; background: #FFC618;";
+    adress.onclick = "null;"
 })
 
 
@@ -129,42 +130,6 @@ function delMap(){
         }
 }
 }
-
-//отмена авто выделения ардесов
-function notSelect() {
-    const className = "#content";
-    const els = document.getElementsByClassName(className);
-    while (els.length > 0) els[0].classList.remove(className);
-}
-
-// авто всыделения ардеов
-function selectText(elementId) {
-
-    var doc = document,
-        text = doc.getElementById(elementId), range, selection;
-
-    if(doc.body.createTextRange) {
-
-        range = document.body.createTextRange();
-        range.moveToElementText(text);
-        range.select();
-
-    } else if(window.getSelection) {
-
-        selection = window.getSelection();
-        range = document.createRange();
-        range.selectNodeContents(text);
-        selection.removeAllRanges();
-        selection.addRange(range);
-
-    }
-
-}
-$("#content").click(function() {
-
-    selectText(this.id);
-
-});
 
 //Анимация машинки
 function goCar() {

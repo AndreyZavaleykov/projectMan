@@ -41,7 +41,7 @@
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<input class=inputText onClick="this.select();" type="text" name="commands" placeholder="Введите содержимое 'worker?admin' "/>
 			<button class="btn" type="submit">Отправить</button>
-			<a id="car" ><img id="car2" src="images/car.png" onclick='this.src="images/invalid.png"' width="90"/></a>
+			<a id="car" ><img id="car2" src="images/car.png" ondblclick='this.src="images/invalid.png"' width="90"/></a>
 			<button  disabled class="buttonOffice"><img src="images/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
 		</form>
 	</div>
@@ -54,7 +54,7 @@
 		</tr>
 		<tr>
 			<th align="center">Адреса заявок</th>
-			<td contentEditable=true id="adress" align="center" ><div id="content"><span>Введите адреса и нажмите "сохранить изменения"</span></div></td>
+			<td contentEditable=true  align="center" ><div><span id="adress" onclick="document.execCommand('selectall',null,false);">Введите адреса и нажмите "сохранить изменения"</span></div></td>
 			<th>
 				<button disabled class="button">Скопировать адреса</button>
 				<button class="button2">Сохранить изменения</button>
