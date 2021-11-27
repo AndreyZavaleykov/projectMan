@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<link rel="short icon" href="images/icon.ico"/>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="short icon" href="img/icon.ico"/>
+	<link rel="stylesheet" href="css/styles.css">
 	<title>Построение путевого листа</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
@@ -13,8 +12,8 @@
 	-->
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0c7967b5-099e-4826-bb49-2be7d033af95"
 					type="text/javascript"></script>
-	<script src="custom_view.js" type="text/javascript"></script>
-	<script src="multiroute_data_access.js" type="text/javascript"></script>
+	<script src="js/custom_view.js" type="text/javascript"></script>
+	<script src="js/multiroute_data_access.js" type="text/javascript"></script>
 	<style>
       html, body {
           height: 100%;
@@ -34,21 +33,21 @@
 
 </head>
 
-<body class="body">
+<body id="body">
 <div>
 	<div>
 		<form class="search">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<input class=inputText onClick="this.select();" type="text" name="commands" placeholder="Введите содержимое 'worker?admin' "/>
 			<button class="btn" type="submit">Отправить</button>
-			<a id="car" ><img id="car2" src="images/car.png" ondblclick='this.src="images/invalid.png"' width="90"/></a>
-			<button  disabled class="buttonOffice"><img src="images/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
+			<a id="car" ><img id="car2" src="img/car.png" ondblclick='this.src="img/invalid.png"' width="90"/></a>
+			<button  disabled class="buttonOffice"><img src="img/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
 		</form>
 	</div>
 	<hr>
 	<table>
 		<tr>
-			<th></th>
+			<th><div class="sun2"><img  class="sun" src="img/sun.png" alt="яркость"><input class="sun1" oninput="sizePic()" type="range" min="0" max="50" step="1" value="0" id = "bright"></div></th>
 			<th>Заявки</th>
 			<th>Автоматическое копирование</th>
 		</tr>
@@ -56,22 +55,22 @@
 			<th align="center">Адреса заявок</th>
 			<td contentEditable=true  align="center" ><div><span id="adress" onclick="document.execCommand('selectall',null,false);">Введите адреса и нажмите "сохранить изменения"</span></div></td>
 			<th>
-				<button disabled class="button">Скопировать адреса</button>
-				<button class="button2">Сохранить изменения</button>
+				<button disabled class="button allButton">Скопировать адреса</button>
+				<button class="button2 allButton">Сохранить изменения</button>
 			</th>
 		</tr>
 		<tr>
 			<th align="center">Номера заявок</th>
 			<th align="left"><span class="span1">	<p id="typewriter"></p></span></th>
 			<th>
-				<button disabled class="button1">Скопировать <br> номера заявок</button>
+				<button disabled class="button1 allButton">Скопировать <br> номера заявок</button>
 			</th>
 		</tr>
 		<tr>
 			<th align="center">Маршрут</th>
 			<th align="center"><span class="km" id="viewContainer"></span></th>
 			<th>
-				<button disabled class="button3">Скопировать <br> километры</button>
+				<button disabled class="button3 allButton">Скопировать <br> километры</button>
 			</th>
 		</tr>
 	</table>
@@ -79,8 +78,8 @@
 <hr>
 <div id="map"></div>
 <hr>
-<script src="text.js"></script>
-<script src="a.js"></script>
+<script src="js/text.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
