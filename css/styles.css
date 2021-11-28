@@ -39,7 +39,7 @@
     font-family: "Times New Roman";
     font-size: 16px;
     font-weight: 500;
-
+    background: #fff;
     border: 1px solid #8B00FF;
     margin-top: 5px;
     margin-left: 0;
@@ -49,8 +49,8 @@
 }
 .buttonOffice:hover:not([disabled])  {
     opacity: 0.9;
-    background: #B8860B;
     border: 1px solid #FF8C00;
+    background: #B8860B;
 }
 .allButton:not([disabled]){
     color: #4B0082;
@@ -60,7 +60,6 @@
     font-family: "Times New Roman";
     font-size: 16px;
     font-weight: 500;
-
     background: #8B00FF;
     color: #fff;
     border: 1px solid #FFC618;
@@ -86,7 +85,7 @@
 
 /*Кнопка скопировать километраж*/
 .button3 {
-    height:100px;
+    height:90px;
 }
 
 #car2{
@@ -129,6 +128,9 @@
     #car{
         display: none;
     }
+    .data{
+        margin-top: 0;
+    }
     .buttonOffice{
         margin-top: 0;
     }
@@ -151,8 +153,6 @@
     }
     .buttonOffice{
         float: none;
-        margin-right: 0;
-        margin-top: 0;
     }
 }
 

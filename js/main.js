@@ -84,8 +84,8 @@ form.addEventListener("submit", (b) => {
     button3.removeAttribute('disabled');
     button3.style.cssText="color: #4B0082; background: #FFC618;";
     buttonOffice.removeAttribute('disabled');
-    data.removeAttribute('disabled');
     buttonOffice.style.cssText="color: #4B0082; background: #FFC618;";
+    data.removeAttribute('disabled');
     adress.onclick = "null;"
 })
 
