@@ -79,7 +79,7 @@
     cursor: pointer;
 
 }
-@media screen and (max-width : 1144px) {
+@media screen and (max-width : 1170px) {
     /*Кнопка скопировать адреса*/
     .button {
         margin-bottom: 4px;
@@ -91,7 +91,7 @@
         width:100%;
     }
     .sun {
-        width: 15%;
+        width:30%;
     }
 }
 @media screen and (max-width : 800px) {
