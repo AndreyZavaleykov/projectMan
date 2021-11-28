@@ -6,8 +6,9 @@ let button3 = document.querySelector(".button3");
 let adress = document.getElementById("adress");
 let body = document.getElementById("body");
 const buttonOffice = document.querySelector(".buttonOffice");
-let info=0, info1=0, office = "ул Рыбаков, д. 3/1";
-let text;
+let info=0, info1=0,text;
+let office =localStorage.getItem('myOffice');
+if(office === null) office="ул Рыбаков, д. 3/1";
 
 function  sizePic(){
     let bright = document.getElementById("bright").value;
@@ -48,7 +49,10 @@ button3.addEventListener("click", () => {
 
 //Кнопка изменить офис
 buttonOffice.addEventListener("click", () => {
-    office =  prompt("Адрес офиса", office); })
+    localStorage.removeItem('myOffice');
+    office =  prompt("Адрес офиса", office);
+    localStorage.setItem('myOffice', office);
+})
 
 //Кнопка Отправить
 form.addEventListener("submit", (b) => {
@@ -158,4 +162,10 @@ function goCar() {
             clearInterval(timer);
         }
     }, 5);
+}
+function dark(){
+    body.style.cssText="filter: brightness("+29+"%);"
+   //body.style.cssText=" background-color: RGB(50,50,50);";
+
+   // document.body.classList.add('dark');
 }

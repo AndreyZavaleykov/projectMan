@@ -18,19 +18,15 @@
       html, body {
           height: 100%;
       }
-
       #map {
           width: 95%;
           height: 50%;
           margin: auto;
       }
-
       #viewContainer {
           margin: 8px;
       }
 	</style>
-
-
 </head>
 
 <body id="body">
@@ -47,7 +43,7 @@
 	<hr>
 	<table>
 		<tr>
-			<th><div class="sun2"><img  class="sun" src="img/sun.png" alt="яркость"><input class="sun1" oninput="sizePic()" type="range" min="0" max="50" step="1" value="0" id = "bright"></div></th>
+			<th><div class="sun2"><img  class="sun" src="img/sun.png" alt="яркость" onClick="dark()"><input class="sun1" oninput="sizePic()" type="range" min="0" max="50" step="1" value="0" id = "bright"></div></th>
 			<th>Заявки</th>
 			<th>Автоматическое копирование</th>
 		</tr>

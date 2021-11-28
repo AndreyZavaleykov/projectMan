@@ -29,6 +29,7 @@
     background: #FFC618;
 }
 .allButton{
+    background: #8B00FF;
     color: #fff;
     border: 1px solid #FFC618;
     height:50px;
@@ -146,7 +147,7 @@ td:nth-child(even) {
     border: 1px solid #4B0082;
 }
 td:nth-child(odd) {
-    background: #8B00FF;
+    background: #6600FF;
 }
 th:nth-child(even)  {
     background: #fff;
@@ -192,4 +193,9 @@ td:hover{
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
+}
+.dark{
+    color: black;
+    border-color: #696969 ;
+    background: #808080;
 }
