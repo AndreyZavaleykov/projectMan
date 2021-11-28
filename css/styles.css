@@ -7,7 +7,7 @@
 .data:not([disabled]) {
     color: #4B0082;
     font-family: "Times New Roman";
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
     background: #FFC618;
     border: 1px solid #8B00FF;
