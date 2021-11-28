@@ -60,12 +60,11 @@ ymaps.modules.define('MultiRouteCustomView', [
 
         processSuccessRequest: function (multiRouteModel, e) {
             var routes = multiRouteModel.getRoutes(),
-                result = ["Данные успешно получены."];
+                result = [];
             if (routes.length) {
-                result.push("Всего маршрутов: " + routes.length + ".");
+                // result.push("Всего маршрутов: " + routes.length + ".");
                 for (var i = 0, l = routes.length; i < l; i++) {
                     result.push(this.processRoute(i, routes[i]));
-                    console.log(this.processRoute(i, routes[i]))
                 }
             } else {
                 result.push("Нет маршрутов.");
