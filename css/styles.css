@@ -15,7 +15,7 @@
     vertical-align: middle;
     padding: 4px;
 }
-#data:hover {
+.data:hover {
     opacity: 0.9;
     background: #B8860B;
 }
