@@ -1,10 +1,13 @@
 .sun {
-    width: 15%;
+    width: 12%;
     vertical-align: middle
 }
 .sun1 {
-    width: 80%;
+    width: 60%;
     vertical-align: middle
+}
+.sun2{
+    width: 10%;
 }
 .btn:hover {
     opacity: 0.9;
@@ -12,6 +15,9 @@
 }
 /*Кнопка адрес офиса*/
 .buttonOffice{
+    font-family: "Times New Roman";
+    font-size: 16px;
+    font-weight: 500;
     border: 1px solid #8B00FF;
     margin-top: 5px;
     /*float: right;*/
@@ -23,12 +29,17 @@
 .buttonOffice:hover:not([disabled])  {
     opacity: 0.9;
     background: #B8860B;
+    border: 1px solid #FF8C00;
 }
 .allButton:not([disabled]){
     color: #4B0082;
     background: #FFC618;
 }
 .allButton{
+    font-family: "Times New Roman";
+    font-size: 16px;
+    font-weight: 500;
+
     background: #8B00FF;
     color: #fff;
     border: 1px solid #FFC618;
@@ -40,6 +51,7 @@
 .allButton:hover:not([disabled])  {
     opacity: 0.9;
     background: #B8860B;
+    border: 1px solid #FFFF00;
 }
 /*Кнопка скопировать адреса*/
 .button {
@@ -78,6 +90,9 @@
         margin-bottom: 4px;
         width:100%;
     }
+    .sun {
+        width: 15%;
+    }
 }
 @media screen and (max-width : 800px) {
 
@@ -87,7 +102,7 @@
     .inputText{
         width: 53%;
     }
-    .sun2{
+    .sun3{
         display: none;
     }
     #car{
@@ -96,6 +111,11 @@
     .buttonOffice{
         margin-top: 0;
     }
+    .allButton{
+        font-family: "Times New Roman";
+        font-size: 12px;
+        font-weight: 400;}
+
 }
 @media screen and (max-width : 550px) {
     .vulc__nav {
@@ -121,7 +141,7 @@ table {
     width: 100%;
 }
 td {
-    width: 60%;
+    width: 70%;
     color: #4B0082;
     padding: 10px 20px;
     text-align: center;
@@ -129,7 +149,10 @@ td {
     transition: all 0.5s linear;
 }
 th {
-    width: 20%;
+    font-family: "Times New Roman";
+    font-size: 16px;
+    font-weight: 500;
+
     padding: 8px 15px;
     color: #fff;
     border: 1px solid #fff;
@@ -139,6 +162,10 @@ th {
     border-bottom-right-radius: 10px;
 }
 td:nth-child(even) {
+    font-family: "Times New Roman";
+    font-size: 16px;
+    font-weight: 500;
+
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;

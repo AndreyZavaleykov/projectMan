@@ -7,17 +7,26 @@ let adress = document.getElementById("adress");
 let body = document.getElementById("body");
 const buttonOffice = document.querySelector(".buttonOffice");
 let info=0, info1=0,text;
+let defoultOffice = "ул Рыбаков, д. 3/1"
 let office =localStorage.getItem('myOffice');
-if(office === null) office="ул Рыбаков, д. 3/1";
 
+
+addOffice(defoultOffice);
+//Если офисс не задан
+function addOffice(address){
+    if (office===null){office=address}
+}
+//регулировка яркости
 function  sizePic(){
     let bright = document.getElementById("bright").value;
     body.style.cssText=" background-color: RGB(" + (255-(bright*2.2)) + "," + (255-(bright*2.2)) + "," + (255-(bright*2.2)) + ");"+"filter: brightness("+(100-bright)+"%);"
 }
+
 // копируем адресса
 button.addEventListener("click", () => {
     navigator.clipboard.writeText(info)
 })
+
 // копируем номера заявок
 button1.addEventListener("click", () => {
     navigator.clipboard.writeText(info1)
@@ -49,8 +58,11 @@ button3.addEventListener("click", () => {
 
 //Кнопка изменить офис
 buttonOffice.addEventListener("click", () => {
+    let buf=office;
     localStorage.removeItem('myOffice');
     office =  prompt("Адрес офиса", office);
+    addOffice(buf);
+    console.log(office)
     localStorage.setItem('myOffice', office);
 })
 

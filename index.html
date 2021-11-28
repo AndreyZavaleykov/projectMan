@@ -43,13 +43,13 @@
 	<hr>
 	<table>
 		<tr>
-			<th><div class="sun2"><img  class="sun" src="img/sun.png" alt="яркость" onClick="dark()"><input class="sun1" oninput="sizePic()" type="range" min="0" max="50" step="1" value="0" id = "bright"></div></th>
+			<th class="sun2"><div class="sun3"><img  class="sun" src="img/sun.png" alt="яркость" onClick="dark()"><input class="sun1" oninput="sizePic()" type="range" min="0" max="50" step="1" value="0" id = "bright"></div></th>
 			<th>Заявки</th>
 			<th>Автоматическое копирование</th>
 		</tr>
 		<tr>
 			<th align="center">Адреса заявок</th>
-			<td contentEditable=true  align="center" ><div><span id="adress" onclick="document.execCommand('selectall',null,false);">Введите адреса и нажмите "сохранить изменения"</span></div></td>
+			<td contentEditable=true  align="center" ><div><span  id="adress" onclick="document.execCommand('selectall',null,false);">Введите адреса и нажмите "сохранить изменения"</span></div></td>
 			<th>
 				<button disabled class="button allButton">Скопировать адреса</button>
 				<button class="button2 allButton">Сохранить изменения</button>
@@ -76,6 +76,5 @@
 <hr>
 <script src="js/text.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>
