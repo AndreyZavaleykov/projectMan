@@ -1,3 +1,24 @@
+.data{
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: 4px;
+    border-radius: 10px;
+}
+.data:not([disabled]) {
+    color: #4B0082;
+    font-family: "Times New Roman";
+    font-size: 25px;
+    font-weight: 500;
+    background: #FFC618;
+    border: 1px solid #8B00FF;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 4px;
+}
+#data:hover {
+    opacity: 0.9;
+    background: #B8860B;
+}
 .sun {
     width: 12%;
     vertical-align: middle
@@ -18,10 +39,10 @@
     font-family: "Times New Roman";
     font-size: 16px;
     font-weight: 500;
+
     border: 1px solid #8B00FF;
     margin-top: 5px;
-    /*float: right;*/
-    margin-left: auto;
+    margin-left: 0;
     border-radius: 10px;
     cursor: pointer;
     animation-play-state: running;

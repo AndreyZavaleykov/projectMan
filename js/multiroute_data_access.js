@@ -1,9 +1,6 @@
-ymaps.ready(init)
-
+// ymaps.ready(init)
 var myMap
-
 function init(a) {
-
     let b = a.split(' ,')
     for (let i = 0; i <= b.length; i++) {
         if (b[i] === ' д. ') {
@@ -12,14 +9,11 @@ function init(a) {
     }
     i=0;
   createMap(b)
-    console.log(b)
 }
 
 function createMap(b) {
     // Создаем модель мультимаршрута.
-    var multiRouteModel = new ymaps.multiRouter.MultiRouteModel(
-        b
-        , {
+    var multiRouteModel = new ymaps.multiRouter.MultiRouteModel(b, {
             // Путевые точки можно перетаскивать.
             // Маршрут при этом будет перестраиваться.
             wayPointDraggable: true,

@@ -4,12 +4,12 @@ const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 let button3 = document.querySelector(".button3");
 let adress = document.getElementById("adress");
+let data=document.querySelector(".data");
 let body = document.getElementById("body");
 const buttonOffice = document.querySelector(".buttonOffice");
 let info=0, info1=0,text;
 let defoultOffice = "ул Рыбаков, д. 3/1"
 let office =localStorage.getItem('myOffice');
-
 
 addOffice(defoultOffice);
 //Если офисс не задан
@@ -30,6 +30,11 @@ button.addEventListener("click", () => {
 // копируем номера заявок
 button1.addEventListener("click", () => {
     navigator.clipboard.writeText(info1)
+})
+
+// копируем дату
+data.addEventListener("click", () => {
+    navigator.clipboard.writeText(data.innerText)
 })
 
 //сохраняем изменения
@@ -79,6 +84,7 @@ form.addEventListener("submit", (b) => {
     button3.removeAttribute('disabled');
     button3.style.cssText="color: #4B0082; background: #FFC618;";
     buttonOffice.removeAttribute('disabled');
+    data.removeAttribute('disabled');
     buttonOffice.style.cssText="color: #4B0082; background: #FFC618;";
     adress.onclick = "null;"
 })
@@ -106,11 +112,23 @@ if(IsJsonString(a)) {
     console.log(abc)
     const b = abc[0].timeslots.filter(item => item.start !== "00:00").filter(item => item.start !== "21:00").map(item => {
         const adress = item.work_data.user_addr.split(', кв')
+        //получаем дату
+        const data = item.real_timeslot.split(" ")
+
         return {
             adress: adress[0],
-            id: item.work_data.id
+            id: item.work_data.id,
+            data:data[0,0]
         }
     })
+    //обрабатываем данные даты
+    let data=b.map(intem => intem.data)
+    data=data[0].split("-");
+    data[0]=data[0].split("\"");
+    data[0]=data[0][1];
+    data=data.reverse();
+    data= data.join(".");
+    document.querySelector(".data").innerHTML = data;
 
     const c = b.map(intem => intem.adress)
     const d = b.map(intem => intem.id)
@@ -124,6 +142,7 @@ if(IsJsonString(a)) {
     c.unshift(office)
     document.querySelector("#adress").innerHTML = c.join(' - ') + " - "+office;
     info = c.join(' - ') + " - " + office;
+
 
     //Красивое оформление номеров заявок
     // document.querySelector(".span1").innerHTML = "#" + d.join('; #') + ";"
