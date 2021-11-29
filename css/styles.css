@@ -1,23 +1,26 @@
+
 .data{
     margin-top: 5px;
     margin-left: auto;
     margin-right: 4px;
     border-radius: 10px;
-}
-.data:not([disabled]) {
     color: #4B0082;
     font-family: "Times New Roman";
-    font-size: 20px;
     font-weight: 500;
-    background: #FFC618;
-    border: 1px solid #8B00FF;
+    font-size: 20px;
     cursor: pointer;
     vertical-align: middle;
     padding: 4px;
+    cursor: pointer;
+}
+.data:not([disabled]) {
+    background: #FFC618;
+    border: 1px solid #8B00FF;
+    transition: 1s;
 }
 .data:hover {
     opacity: 0.9;
-    background: #B8860B;
+    border: 1px solid #FF8C00;
 }
 .sun {
     width: 12%;
@@ -30,16 +33,11 @@
 .sun2{
     width: 10%;
 }
-.btn:hover {
-    opacity: 0.9;
-    background: #B8860B;
-}
 /*Кнопка адрес офиса*/
 .buttonOffice{
     font-family: "Times New Roman";
     font-size: 16px;
     font-weight: 500;
-    background: #fff;
     border: 1px solid #8B00FF;
     margin-top: 5px;
     margin-left: 0;
@@ -50,7 +48,6 @@
 .buttonOffice:hover:not([disabled])  {
     opacity: 0.9;
     border: 1px solid #FF8C00;
-    background: #B8860B;
 }
 .allButton:not([disabled]){
     color: #4B0082;
@@ -69,8 +66,7 @@
     cursor: pointer;
 }
 .allButton:hover:not([disabled])  {
-    opacity: 0.9;
-    background: #B8860B;
+    opacity: 0.8;
     border: 1px solid #FFFF00;
 }
 /*Кнопка скопировать адреса*/
@@ -82,7 +78,6 @@
     margin-top: 4px;
     width:49%;
 }
-
 /*Кнопка скопировать километраж*/
 .button3 {
     height:90px;
@@ -241,6 +236,10 @@ td:hover{
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
+}
+.btn:hover {
+    opacity: 0.9;
+    background: #B8860B;
 }
 .dark{
     color: black;

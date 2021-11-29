@@ -161,7 +161,8 @@ if(IsJsonString(a)) {
 //функция удаления карты при перестроении маршрута
 function delMap(){
      if(info) {
-        //удаляем карту
+         console.log(2)
+         //удаляем карту
         myMap.destroy()
         //удаляем подпись
         var node = document.getElementById('viewContainer');
