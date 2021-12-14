@@ -38,7 +38,7 @@
 			<button class="btn" type="submit">Отправить</button>
 			<a id="car" ><img id="car2" src="img/car.png" ondblclick='this.src="img/invalid.png"' width="90"/></a>
 			<div disabled class="data"></div>
-			<button  disabled class="buttonOffice"><img src="img/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
+			<button  title="тут можно задать адрес начальной и конечной точки, начальное значение 'ул. Рыбаков 3/1'" disabled class="buttonOffice"><img src="img/office.png" width="20" style="vertical-align:sub"> Адрес офиса</button>
 		</form>
 	</div>
 	<hr>
@@ -50,24 +50,24 @@
 		</tr>
 		<tr>
 			<th align="center">Адреса заявок</th>
-			<td contentEditable=true  align="center" ><div><span  id="adress" onclick="document.execCommand('selectall',null,false);">Введите адреса и нажмите "сохранить изменения"</span></div></td>
+			<td contentEditable=true  align="center" ><div title="для построения карты, введите ардреса разделеные знаком '-' и нажмите сохранить изменения" ><span  id="adress" onclick="document.execCommand('selectall',null,false);">Введите адреса и нажмите "сохранить изменения"</span></div></td>
 			<th>
-				<button disabled class="button allButton">Скопировать адреса</button>
-				<button class="button2 allButton">Сохранить изменения</button>
+				<button disabled class="button allButton" title="по нажатию копируются адреса заявок заявок в буфер обмена" >Скопировать адреса</button>
+				<button class="button2 allButton" title="по нажатию сохраняются изменения внесенные в адреса заявок">Сохранить изменения</button>
 			</th>
 		</tr>
 		<tr>
 			<th align="center">Номера заявок</th>
 			<th align="left"><span class="span1"><p id="typewriter"></p></span></th>
 			<th>
-				<button disabled class="button1 allButton">Скопировать <br> номера заявок</button>
+				<button title="по нажатию копируются номера заявок в буфер обмена" disabled class="button1 allButton">Скопировать <br> номера заявок</button>
 			</th>
 		</tr>
 		<tr>
 			<th align="center">Маршрут</th>
 			<th align="center"><span class="km" id="viewContainer"></span></th>
 			<th>
-				<button disabled class="button3 allButton">Скопировать <br> километры</button>
+				<button disabled title="по нажатию копируются километры в буфер обмена" class="button3 allButton">Скопировать <br> километры</button>
 			</th>
 		</tr>
 	</table>
