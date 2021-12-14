@@ -1,4 +1,4 @@
-
+input::-ms-clear{display: none;}
 .data{
     margin-top: 5px;
     margin-left: auto;
