@@ -56,7 +56,7 @@ button2.addEventListener("click", () => {
 button3.addEventListener("click", () => {
     let km=document.querySelector(".km").innerText;
     let splitkm=km.split("км")
-    let km1=splitkm[0].split("Протяженность маршрута:")
+    let km1=splitkm[0].split("Протяженность маршрута: ")
     navigator.clipboard.writeText(km1[1])
 
 })
