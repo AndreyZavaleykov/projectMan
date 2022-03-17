@@ -157,7 +157,7 @@ table {
     width: 100%;
 }
 td {
-    width: 70%;
+    width: 50%;
     color: #4B0082;
     padding: 10px 20px;
     text-align: center;
@@ -241,8 +241,19 @@ td:hover{
     opacity: 0.9;
     background: #B8860B;
 }
-.dark{
-    color: black;
-    border-color: #696969 ;
-    background: #808080;
+.weather {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
 }
+.weatger-info {
+    display: flex;
+    flex-flow: column-reverse;
+    justify-content: center
+}
+.city-tempr {
+    display: flex;
+    justify-content: space-between;
+}
+

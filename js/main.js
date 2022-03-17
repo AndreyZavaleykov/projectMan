@@ -195,9 +195,22 @@ function goCar() {
         }
     }, 5);
 }
-function dark(){
-    body.style.cssText="filter: brightness("+29+"%);"
-   //body.style.cssText=" background-color: RGB(50,50,50);";
 
-   // document.body.classList.add('dark');
-}
+fetch('https://api.openweathermap.org/data/2.5/weather?q=sevastopol&appid=9cf2fda720181f036bcd35846432e409')
+    .then((Response) =>{
+        return Response.json();
+    })
+    .then(async (data) => {
+        const apiResponseTemp = data.main.temp;
+        document.querySelector('.city-name').textContent = data.name+" ";
+        document.querySelector('.temperature').innerHTML = Math.round(data.main.temp - 273) + ' C'+'&deg;';
+        document.querySelector('.icon').innerHTML =  `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png" width="50px">`;
+        let dataTime = new Date();
+        let year = dataTime.getFullYear();
+        let month = Number(dataTime.getMonth())+1;
+        let date = dataTime.getDate();
+        let hours = dataTime.getHours();
+        let minutes = dataTime.getMinutes();
+        let seconds = dataTime.getSeconds();
+        document.querySelector('.date').innerHTML = year+'-'+month+'-'+date+' '+hours+':'+minutes;
+    })
