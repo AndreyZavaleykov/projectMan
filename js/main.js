@@ -4,22 +4,26 @@ const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 let button3 = document.querySelector(".button3");
 let adress = document.getElementById("adress");
-let data=document.querySelector(".data");
+let data = document.querySelector(".data");
 let body = document.getElementById("body");
 const buttonOffice = document.querySelector(".buttonOffice");
-let info=0, info1=0,text;
+let info = 0, info1 = 0, text;
 let defoultOffice = "ул Рыбаков, д. 3/1"
-let office =localStorage.getItem('myOffice');
+let office = localStorage.getItem('myOffice');
 
 addOffice(defoultOffice);
+
 //Если офисс не задан
-function addOffice(address){
-    if (office===null){office=address}
+function addOffice(address) {
+    if (office === null) {
+        office = address
+    }
 }
+
 //регулировка яркости
-function  sizePic(){
+function sizePic() {
     let bright = document.getElementById("bright").value;
-    body.style.cssText=" background-color: RGB(" + (255-(bright*2.2)) + "," + (255-(bright*2.2)) + "," + (255-(bright*2.2)) + ");"+"filter: brightness("+(100-bright)+"%);"
+    body.style.cssText = " background-color: RGB(" + (255 - (bright * 2.2)) + "," + (255 - (bright * 2.2)) + "," + (255 - (bright * 2.2)) + ");" + "filter: brightness(" + (100 - bright) + "%);"
 }
 
 // копируем адресса
@@ -40,32 +44,34 @@ data.addEventListener("click", () => {
 //сохраняем изменения
 button2.addEventListener("click", () => {
     delMap();
-    let g=document.querySelector("#adress").innerText;
+    let g = document.querySelector("#adress").innerText;
     info = g;
     console.log(g)
     let b = g.split('-')
     init(b.join(' ,Севастополь, '));
-   setTimeout( () => {goCar();}, 1600);
+    setTimeout(() => {
+        goCar();
+    }, 1600);
     button3.removeAttribute('disabled');
-    button3.style.cssText="color: #4B0082; background: #FFC618;";
+    button3.style.cssText = "color: #4B0082; background: #FFC618;";
     button.removeAttribute('disabled');
-    button.style.cssText="color: #4B0082; background: #FFC618;";
+    button.style.cssText = "color: #4B0082; background: #FFC618;";
 })
 
 // Копируем километраж
 button3.addEventListener("click", () => {
-    let km=document.querySelector(".km").innerText;
-    let splitkm=km.split("км")
-    let km1=splitkm[0].split("Протяженность маршрута: ")
+    let km = document.querySelector(".km").innerText;
+    let splitkm = km.split("км")
+    let km1 = splitkm[0].split("Протяженность маршрута: ")
     navigator.clipboard.writeText(km1[1])
 
 })
 
 //Кнопка изменить офис
 buttonOffice.addEventListener("click", () => {
-    let buf=office;
+    let buf = office;
     localStorage.removeItem('myOffice');
-    office =  prompt("Адрес офиса", office);
+    office = prompt("Адрес офиса", office);
     addOffice(buf);
     console.log(office)
     localStorage.setItem('myOffice', office);
@@ -78,13 +84,13 @@ form.addEventListener("submit", (b) => {
     let a = b.target[0].value;
     out(a);
     button.removeAttribute('disabled');
-    button.style.cssText="color: #4B0082; background: #FFC618;";
+    button.style.cssText = "color: #4B0082; background: #FFC618;";
     button1.removeAttribute('disabled');
-    button1.style.cssText="color: #4B0082; background: #FFC618;";
+    button1.style.cssText = "color: #4B0082; background: #FFC618;";
     button3.removeAttribute('disabled');
-    button3.style.cssText="color: #4B0082; background: #FFC618;";
+    button3.style.cssText = "color: #4B0082; background: #FFC618;";
     buttonOffice.removeAttribute('disabled');
-    buttonOffice.style.cssText="color: #4B0082; background: #FFC618;";
+    buttonOffice.style.cssText = "color: #4B0082; background: #FFC618;";
     data.removeAttribute('disabled');
     adress.onclick = "null;"
 })
@@ -104,9 +110,9 @@ function IsJsonString(str) {
 function out(a) {
 
 //    Проверка соответствия JSON
-if(IsJsonString(a)) {
-    alert("Введено неверное значение")
-}
+    if (IsJsonString(a)) {
+        alert("Введено неверное значение")
+    }
 
     let abc = JSON.parse(a)
     console.log(abc)
@@ -118,16 +124,16 @@ if(IsJsonString(a)) {
         return {
             adress: adress[0],
             id: item.work_data.id,
-            data:data[0,0]
+            data: data[0, 0]
         }
     })
     //обрабатываем данные даты
-    let data=b.map(intem => intem.data)
-    data=data[0].split("-");
-    data[0]=data[0].split("\"");
-    data[0]=data[0][1];
-    data=data.reverse();
-    data= data.join(".");
+    let data = b.map(intem => intem.data)
+    data = data[0].split("-");
+    data[0] = data[0].split("\"");
+    data[0] = data[0][1];
+    data = data.reverse();
+    data = data.join(".");
     document.querySelector(".data").innerHTML = data;
 
     const c = b.map(intem => intem.adress)
@@ -140,7 +146,7 @@ if(IsJsonString(a)) {
     }
     //оформление ардесов
     c.unshift(office)
-    document.querySelector("#adress").innerHTML = c.join(' - ') + " - "+office;
+    document.querySelector("#adress").innerHTML = c.join(' - ') + " - " + office;
     info = c.join(' - ') + " - " + office;
 
 
@@ -149,46 +155,47 @@ if(IsJsonString(a)) {
     info1 = "#" + d.join('; #') + ";";
 
     //отправка данных в функцию построения маршрута на карте
-    init("Севастополь, " + c.join(' , Севастополь, ') + " , Севастополь, "+office);
+    init("Севастополь, " + c.join(' , Севастополь, ') + " , Севастополь, " + office);
 
     //запуск печатной машинки
     setTimeout(() => {
-    textPrint(info1);
-    go();
-    goCar();},1600);
+        textPrint(info1);
+        go();
+        goCar();
+    }, 1600);
 }
 
 //функция удаления карты при перестроении маршрута
-function delMap(){
-     if(info) {
-         console.log(2)
-         //удаляем карту
+function delMap() {
+    if (info) {
+        console.log(2)
+        //удаляем карту
         myMap.destroy()
         //удаляем подпись
         var node = document.getElementById('viewContainer');
         while (node.hasChildNodes()) {
             node.removeChild(node.firstChild);
         }
-}
+    }
 }
 
 //Анимация машинки
 function goCar() {
     let start = Date.now();
-    let timer = setInterval(function() {
+    let timer = setInterval(function () {
         let timePassed = Date.now() - start;
-        let right=0;
+        let right = 0;
         switch (true) {
             case (timePassed < 2000):
                 car.style.left = timePassed / 55 + '%';
                 right = timePassed / 55;
                 break;
-            case (2000<timePassed <2500 ):
+            case (2000 < timePassed < 2500):
                 car2.style.transform = "scale(-1, 1)";
-                car.style.left =73+ right - (timePassed/ 55 - right) + '%';
+                car.style.left = 73 + right - (timePassed / 55 - right) + '%';
                 break;
         }
-        if (4000 < timePassed ){
+        if (4000 < timePassed) {
             car2.style.transform = "scale(1, 1)";
             car.style.left = 0;
             clearInterval(timer);
@@ -197,20 +204,20 @@ function goCar() {
 }
 
 fetch('https://api.openweathermap.org/data/2.5/weather?q=sevastopol&appid=9cf2fda720181f036bcd35846432e409')
-    .then((Response) =>{
+    .then((Response) => {
         return Response.json();
     })
     .then(async (data) => {
         const apiResponseTemp = data.main.temp;
-        document.querySelector('.city-name').textContent = data.name+" ";
-        document.querySelector('.temperature').innerHTML = Math.round(data.main.temp - 273) + ' C'+'&deg;';
-        document.querySelector('.icon').innerHTML =  `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png" width="50px">`;
+        document.querySelector('.city-name').textContent = data.name + " ";
+        document.querySelector('.temperature').innerHTML = Math.round(data.main.temp - 273) + ' C' + '&deg;';
+        document.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png" width="50px">`;
         let dataTime = new Date();
         let year = dataTime.getFullYear();
-        let month = Number(dataTime.getMonth())+1;
+        let month = Number(dataTime.getMonth()) + 1;
         let date = dataTime.getDate();
         let hours = dataTime.getHours();
         let minutes = dataTime.getMinutes();
         let seconds = dataTime.getSeconds();
-        document.querySelector('.date').innerHTML = year+'-'+month+'-'+date+' '+hours+':'+minutes;
+        document.querySelector('.date').innerHTML = year + '-' + month + '-' + date + ' ' + hours + ':' + minutes;
     })

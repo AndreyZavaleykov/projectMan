@@ -1,5 +1,8 @@
-input::-ms-clear{display: none;}
-.data{
+input::-ms-clear {
+    display: none;
+}
+
+.data {
     margin-top: 5px;
     margin-left: auto;
     margin-right: 4px;
@@ -13,28 +16,34 @@ input::-ms-clear{display: none;}
     padding: 4px;
     cursor: pointer;
 }
+
 .data:not([disabled]) {
     background: #FFC618;
     border: 1px solid #8B00FF;
     transition: 1s;
 }
+
 .data:hover {
     opacity: 0.9;
     border: 1px solid #FF8C00;
 }
+
 .sun {
     width: 12%;
     vertical-align: middle
 }
+
 .sun1 {
     width: 60%;
     vertical-align: middle
 }
-.sun2{
+
+.sun2 {
     width: 10%;
 }
+
 /*Кнопка адрес офиса*/
-.buttonOffice{
+.buttonOffice {
     font-family: "Times New Roman";
     font-size: 16px;
     font-weight: 500;
@@ -45,47 +54,55 @@ input::-ms-clear{display: none;}
     cursor: pointer;
     animation-play-state: running;
 }
-.buttonOffice:hover:not([disabled])  {
+
+.buttonOffice:hover:not([disabled]) {
     opacity: 0.9;
     border: 1px solid #FF8C00;
 }
-.allButton:not([disabled]){
+
+.allButton:not([disabled]) {
     color: #4B0082;
     background: #FFC618;
 }
-.allButton{
+
+.allButton {
     font-family: "Times New Roman";
     font-size: 16px;
     font-weight: 500;
     background: #8B00FF;
     color: #fff;
     border: 1px solid #FFC618;
-    height:50px;
-    width:100%;
+    height: 50px;
+    width: 100%;
     border-radius: 10px;
     cursor: pointer;
 }
-.allButton:hover:not([disabled])  {
+
+.allButton:hover:not([disabled]) {
     opacity: 0.8;
     border: 1px solid #FFFF00;
 }
+
 /*Кнопка скопировать адреса*/
 .button {
     margin-top: 4px;
-    width:48.3%;
-}
-/*Кнопка сохранить изменения*/
-.button2 {
-    width:48.3%;
-}
-/*Кнопка скопировать километраж*/
-.button3 {
-    height:90px;
+    width: 48.3%;
 }
 
-#car2{
+/*Кнопка сохранить изменения*/
+.button2 {
+    width: 48.3%;
+}
+
+/*Кнопка скопировать километраж*/
+.button3 {
+    height: 90px;
+}
+
+#car2 {
     transform: scale(1, 1);
 }
+
 #car {
     position: relative;
     top: 10px;
@@ -94,59 +111,73 @@ input::-ms-clear{display: none;}
     cursor: pointer;
 
 }
-@media screen and (max-width : 1170px) {
+
+@media screen and (max-width: 1170px) {
     /*Кнопка скопировать адреса*/
     .button {
         margin-bottom: 4px;
-        width:100%;
-    }
-    /*Кнопка сохранить изменения*/
-    .button2 {
-        margin-bottom: 4px;
-        width:100%;
-    }
-    .sun {
-        width:30%;
-    }
-}
-@media screen and (max-width : 800px) {
-
-    .vulc__nav {
-        font-size:0.5em;
-}
-    .inputText{
-        width: 53%;
-    }
-    .sun3{
-        display: none;
-    }
-    #car{
-        display: none;
-    }
-    .data{
-        margin-top: 0;
-    }
-    .buttonOffice{
-        margin-top: 0;
-    }
-    .allButton{
-        font-family: "Times New Roman";
-        font-size: 12px;
-        font-weight: 400;}
-
-}
-@media screen and (max-width : 550px) {
-    .vulc__nav {
-        font-size:0.5em;
-    }
-    .inputText{
         width: 100%;
     }
 
-    img{
+    /*Кнопка сохранить изменения*/
+    .button2 {
+        margin-bottom: 4px;
+        width: 100%;
+    }
+
+    .sun {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .vulc__nav {
+        font-size: 0.5em;
+    }
+
+    .inputText {
+        width: 53%;
+    }
+
+    .sun3 {
         display: none;
     }
-    .buttonOffice{
+
+    #car {
+        display: none;
+    }
+
+    .data {
+        margin-top: 0;
+    }
+
+    .buttonOffice {
+        margin-top: 0;
+    }
+
+    .allButton {
+        font-family: "Times New Roman";
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .vulc__nav {
+        font-size: 0.5em;
+    }
+
+    .inputText {
+        width: 100%;
+    }
+
+    img {
+        display: none;
+    }
+
+    .buttonOffice {
         float: none;
     }
 }
@@ -156,6 +187,7 @@ table {
     empty-cells: hide;
     width: 100%;
 }
+
 td {
     width: 50%;
     color: #4B0082;
@@ -164,6 +196,7 @@ td {
     border-bottom: 1px solid #F4EEE8;
     transition: all 0.5s linear;
 }
+
 th {
     font-family: "Times New Roman";
     font-size: 16px;
@@ -177,6 +210,7 @@ th {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 td:nth-child(even) {
     font-family: "Times New Roman";
     font-size: 16px;
@@ -189,24 +223,30 @@ td:nth-child(even) {
     background: #fff;
     border: 1px solid #4B0082;
 }
+
 td:nth-child(odd) {
     background: #6600FF;
 }
-th:nth-child(even)  {
+
+th:nth-child(even) {
     background: #fff;
     color: #4B0082;
     border: 1px solid #4B0082;
 }
-th:nth-child(odd)  {
+
+th:nth-child(odd) {
     background: #8B00FF;
 }
+
 .round-top {
     border-top-left-radius: 5px;
 }
+
 .round-bottom {
     border-bottom-left-radius: 5px;
 }
-td:hover{
+
+td:hover {
     background: #E7EAEC;
 }
 
@@ -215,6 +255,7 @@ td:hover{
     position: relative;
     display: flex;
 }
+
 .inputText {
     color: #4B0082;
     left: 20%;
@@ -226,6 +267,7 @@ td:hover{
     border-radius: 5px 0 0 5px;
     outline: none;
 }
+
 .btn {
     width: 110px;
     height: 36px;
@@ -237,21 +279,25 @@ td:hover{
     cursor: pointer;
     font-size: 20px;
 }
+
 .btn:hover {
     opacity: 0.9;
     background: #B8860B;
 }
+
 .weather {
     font-family: "Montserrat", sans-serif;
     display: flex;
     width: fit-content;
     justify-content: space-between;
 }
+
 .weatger-info {
     display: flex;
     flex-flow: column-reverse;
     justify-content: center
 }
+
 .city-tempr {
     display: flex;
     justify-content: space-between;
