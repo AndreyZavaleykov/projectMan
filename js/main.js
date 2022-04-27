@@ -44,7 +44,7 @@ data.addEventListener("click", () => {
 //сохраняем изменения
 button2.addEventListener("click", () => {
     delMap();
-    let g = document.querySelector("#adress").innerText;
+    let g = document.querySelector("#adress").textContent;
     info = g;
     console.log(g)
     let b = g.split('-')
