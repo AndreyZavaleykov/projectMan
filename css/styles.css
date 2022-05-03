@@ -286,6 +286,7 @@ td:hover {
 }
 
 .weather {
+    white-space: nowrap;
     font-family: "Montserrat", sans-serif;
     display: flex;
     width: fit-content;
