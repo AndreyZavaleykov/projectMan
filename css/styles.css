@@ -113,6 +113,7 @@ input::-ms-clear {
 }
 
 @media screen and (max-width: 1170px) {
+
     /*Кнопка скопировать адреса*/
     .button {
         margin-bottom: 4px;
@@ -250,6 +251,10 @@ td:hover {
     background: #E7EAEC;
 }
 
+#adress {
+    outline: 0;
+}
+
 .search {
     width: 100%;
     position: relative;
@@ -303,4 +308,3 @@ td:hover {
     display: flex;
     justify-content: space-between;
 }
-
